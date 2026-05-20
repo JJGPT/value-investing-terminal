@@ -1,0 +1,25 @@
+{
+  "name": "value-investing-terminal",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "npm --workspace @value-terminal/web run dev",
+    "dev:api": "cd apps/api && python3 -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000",
+    "init:db": "mkdir -p apps/api/data",
+    "test:api": "cd apps/api && PYTHONDONTWRITEBYTECODE=1 python3 -m pytest tests",
+    "check": "npm run typecheck && npm run test:api && npm run build",
+    "build": "npm --workspace @value-terminal/web run build",
+    "typecheck": "npm --workspace @value-terminal/valuation-engine run typecheck && npm --workspace @value-terminal/web run typecheck",
+    "format": "prettier --check \"**/*.{css,json,js,jsx,md,ts,tsx}\"",
+    "format:write": "prettier --write \"**/*.{css,json,js,jsx,md,ts,tsx}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}

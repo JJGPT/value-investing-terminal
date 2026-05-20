@@ -41,6 +41,15 @@ build/Release
 node_modules/
 jspm_packages/
 
+# Python
+__pycache__/
+*.py[cod]
+.python-version
+.venv/
+venv/
+apps/api/data/*.db
+apps/api/data/*.db-*
+
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
@@ -77,6 +86,7 @@ web_modules/
 # Next.js build output
 .next
 out
+.netlify
 
 # Nuxt.js build / generate output
 .nuxt

@@ -11,12 +11,19 @@ This folder contains:
 - infrastructure planning
 - system diagrams
 - API structure
+- screener architecture
+- ranking methodology
+- refresh workflows
+- watchlist intelligence
+- valuation architecture
+- valuation audit methodology
 - agent orchestration
 - caching systems
 
 The objective is to design a scalable institutional-grade platform.
 
 Architecture decisions should prioritize:
+
 - scalability;
 - modularity;
 - maintainability;
